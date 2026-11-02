@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja" class="cinematic"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="Motion × Codexの映像作品を集めた、小さなオンライン上映室。"><title>Motion × Codex — Works Library</title><link rel="stylesheet" href="./style.css">
+<script defer src="./works.js"></script><script defer src="./gallery.js"></script><script defer src="./carousel.js"></script><script defer src="./appearance.js"></script>
+</head><body>
+<header class="masthead"><a class="wordmark" href="./">Motion <i>×</i> Codex</a><span class="brand-section">Works Library</span><button id="theme" type="button" aria-label="Classic表示に切り替える">Classic</button></header>
+<main>
+<div id="library"><h1 class="sr">Motion × Codex Works Library</h1>
+<section class="spotlight" aria-label="Featured Works">
+<div id="featured"></div>
+<div class="transport"><span class="transport-title" aria-hidden="true">Featured Works</span>
+<div id="dots" role="group" aria-label="注目作品を選択"></div>
+<div class="feature-nav"><button id="rotation" type="button">一時停止</button>
+<button id="prev" type="button" aria-label="前の作品">←</button><span id="position"></span><button id="next" type="button" aria-label="次の作品">→</button></div></div>
+</section>
+<section id="collection"><div class="collection-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>作品一覧</h2></div><p id="count" aria-live="polite"></p></div>
+<div class="filters"><label class="search"><span>検索</span><input type="search" id="search" placeholder="作品名・作品ID" autocomplete="off"></label>
+<label>分類<select id="series"><option value="">すべての分類</option></select></label>
+<label>Human評価<select id="score"><option value="">すべての評価</option><option value="5">5.0</option><option value="4.5">4.5以上</option><option value="4">4.0以上</option><option value="unrated">未評価</option></select></label></div>
+<div class="gallery" id="gallery"></div><p id="no-results" hidden>該当する作品はありません。検索条件を変更してください。</p></section></div>
+<section id="screening" hidden><a href="#collection" class="back">← 作品一覧</a>
+<div class="stage" id="stage"></div><div class="notes"><p class="eyebrow">SCREENING ROOM</p>
+<h1 id="title" tabindex="-1"></h1><div id="detail-rating"></div><p id="description"></p><p id="meta"></p></div>
+<div class="actions"><p id="status" role="status"></p><div class="watch-controls"><button id="expand" hidden>全画面で見る</button><a id="watch" target="_blank" rel="noopener noreferrer">YouTubeで見る ↗</a></div></div></section>
+<footer><span>Motion × Codex</span><small>Works Library</small></footer></main>
+<noscript>作品を表示するにはJavaScriptを有効にしてください。</noscript></body></html>
