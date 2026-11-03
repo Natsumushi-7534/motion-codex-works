@@ -58,6 +58,18 @@ const works = [
     "featured": true,
     "japaneseTitle": "硝子の中庭",
     "englishTitle": "THE GLASS COURTYARD"
+  },
+  {
+    "id": "MC036",
+    "version": "MC036-C05",
+    "japaneseTitle": "光の彫刻",
+    "englishTitle": "CHROMA",
+    "description": "色の輪がほどけ、旋回し、再びひとつの彫刻へ。透明な層に光と色が重なる40秒の抽象映像。",
+    "series": "抽象映像",
+    "seconds": 40.0,
+    "video": "mWYedpSXS50",
+    "thumbnail": "./images/MC036-C05.jpg",
+    "featured": true
   }
 ];
 const initialFeaturedIds = works.filter(work => work.featured).map(work => work.id);
