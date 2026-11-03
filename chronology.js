@@ -26,8 +26,7 @@ const Chronology = (() => {
   }
   function label(work) {
     const c = value(work);
-    return !c ? "完成採用日時 未確認" : "完成採用 " + c.day.replaceAll("-", ".")
-      + (c.at ? " " + c.at.slice(11,16) + " JST" : " · 時刻未確認");
+    return !c ? "完成採用日 未確認" : "完成採用 " + c.day.replaceAll("-", ".");
   }
   return {value,ordered,label};
 })();
