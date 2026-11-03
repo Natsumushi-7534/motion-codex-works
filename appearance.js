@@ -15,11 +15,10 @@ for (const series of new Set(works.map(w=>w.series))) byId("series").add(new Opt
 const cards = [...byId("gallery").children];
 function filterWorks(){
   const query = normalize(byId("search").value.trim());
-  const series = byId("series").value, score = byId("score").value;
+  const series = byId("series").value;
   let count = 0;
   works.forEach((w,i)=>{
-    const matchScore = score==="unrated" ? w.rating==null : !score || (w.rating!=null && w.rating>=Number(score));
-    const match = matchScore && (!series || w.series===series) && normalize(Titles.search(w)).includes(query);
+    const match = (!series || w.series===series) && normalize(Titles.search(w)).includes(query);
     cards[i].hidden=!match;
     if(match) count++;
   });
@@ -27,4 +26,4 @@ function filterWorks(){
   byId("no-results").hidden=!!count;
 }
 byId("search").oninput=filterWorks;
-byId("score").onchange=byId("series").onchange=filterWorks;
+byId("series").onchange=filterWorks;

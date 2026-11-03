@@ -1,11 +1,11 @@
 :root {
   color-scheme:light; --bg:#f4f1e9; --surface:#ebe8df; --ink:#192820; --muted:#56655c;
-  --line:#bfc7ba; --accent:#765815; --gold:#926916; --empty:#797c79;
+  --line:#bfc7ba; --accent:#765815;
   --serif:Georgia,"Hiragino Mincho ProN","Yu Mincho",serif;
 }
 :root.cinematic {
   color-scheme:dark; --bg:#121315; --surface:#1d1e20; --ink:#f2f0ea; --muted:#b2b0aa;
-  --line:#38393a; --accent:#d9bd81; --gold:#e8c571; --empty:#54565b;
+  --line:#38393a; --accent:#d9bd81;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -38,11 +38,8 @@ button{background:transparent;border:1px solid var(--line)}
 .english-title{font:500 12px/1.55 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;letter-spacing:.12em;margin-top:7px}
 .featured h2{font-size:clamp(36px,4.4vw,73px);margin:12px 0 14px;letter-spacing:-.045em}
 .film-facts{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.stars{display:block;width:93px;height:18px;fill:var(--empty);flex:none}
-.stars .lit{fill:var(--gold)}
-.featured .stars{--gold:#ebc56e;--empty:#686868}
-.unrated,.running-time,.film-id{color:var(--muted);font-size:12px}
-.featured .unrated,.featured .running-time{color:#eee7dc}
+.running-time,.film-id{color:var(--muted);font-size:12px}
+.featured .running-time{color:#eee7dc}
 .running-time{font-variant-numeric:tabular-nums;border-left:1px solid currentColor;padding-left:12px;line-height:1}
 .synopsis{font-size:14px;line-height:1.8;margin:10px 0 0;overflow-wrap:anywhere}
 .featured .synopsis{max-width:36em;color:#eee8de}
@@ -113,10 +110,9 @@ footer small{margin-right:auto}
   .transport-title{display:none}#dots{margin:0;max-width:100%;flex-wrap:wrap}
   .dot{min-width:44px}.feature-nav{margin-left:auto}
   .gallery{grid-template-columns:minmax(0,1fr);gap:22px}
-  .filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+  .filters{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
   .filters label{display:grid;gap:2px}.filters .search{grid-column:1/-1}
   .filters input,.filters select{width:100%;min-width:0;font-size:16px}
-  .stars{width:102px;height:19px}
 }
 @media(prefers-reduced-motion:reduce){.card-cover img{transition:none}}
 @media(max-width:420px){

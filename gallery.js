@@ -16,34 +16,6 @@ function image(work) {
   img.alt = "";
   return img;
 }
-function stars(work) {
-  if (work.rating == null) return node("span", "unrated", "未評価");
-  const ns = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(ns,"svg");
-  svg.setAttribute("viewBox","0 0 116 20");
-  svg.setAttribute("class","stars");
-  svg.setAttribute("role","img");
-  svg.setAttribute("aria-label","Human評価 " + work.rating.toFixed(1) + " / 5");
-  for(let i=0;i<5;i++){
-    const star = document.createElementNS(ns,"path");
-    star.setAttribute("d","M10 0.8 12.9 6.7 19.5 7.7 14.7 12.3 15.8 19 10 15.9 4.2 19 5.3 12.3 0.5 7.7 7.1 6.7Z");
-    const slot = document.createElementNS(ns,"g");
-    slot.setAttribute("transform","translate(" + (24*i) + " 0)");
-    slot.append(star);
-    const fraction = Math.min(1,Math.max(0,work.rating-i));
-    if (fraction) {
-      const clip = document.createElementNS(ns,"svg");
-      clip.setAttribute("width",String(20*fraction));
-      clip.setAttribute("height","20");
-      clip.setAttribute("overflow","hidden");
-      clip.setAttribute("class","lit");
-      clip.append(star.cloneNode());
-      slot.append(clip);
-    }
-    svg.append(slot);
-  }
-  return svg;
-}
 function filmTitle(work,tag) { return Titles.render(work,tag); }
 let startOnOpen = null;
 function entry(work,featured){
@@ -51,7 +23,7 @@ function entry(work,featured){
   link.href="#"+work.version;
   const poster=image(work);
   const line=node("div","film-facts");
-  line.append(stars(work),node("span","running-time",clock(work.seconds)));
+  line.append(node("span","running-time",clock(work.seconds)));
   if (featured) {
     const caption=node("div","featured-caption");
     caption.append(node("span","hero-label","FEATURED WORK"),filmTitle(work,"h2"),line,
@@ -153,7 +125,6 @@ function route() {
   }
   document.title = Titles.text(work) + " — Works Library";
   byId("title").replaceChildren(...filmTitle(work,"span").childNodes);
-  byId("detail-rating").replaceChildren(stars(work));
   byId("meta").textContent = [clock(work.seconds), work.version, work.series].join("　·　");
   byId("description").textContent = work.description;
   const watch = byId("watch");
