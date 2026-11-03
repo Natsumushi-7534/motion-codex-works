@@ -15,7 +15,6 @@ const Titles=(()=>{
   return {ja,en};
  }
  function text(work){const {ja,en}=parts(work);return [ja,en].filter(Boolean).join("｜");}
- function search(work){return [text(work),work.formalTitle||work.title||"",work.id||"",work.version||""].join(" ");}
  function render(work,tag="span"){
   const {ja,en}=parts(work),root=document.createElement(tag);root.className="film-title";
   function line(value,language,cls){const span=document.createElement("span");span.className=cls;span.lang=language;span.textContent=value;root.append(span);}
@@ -23,6 +22,6 @@ const Titles=(()=>{
   if(en)line(en,"en",ja?"english-title":"main-title");
   return root;
  }
- return {parts,text,search,render};
+ return {parts,text,render};
 })();
 if(typeof module!=="undefined")module.exports=Titles;

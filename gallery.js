@@ -17,6 +17,11 @@ function image(work) {
   return img;
 }
 function filmTitle(work,tag) { return Titles.render(work,tag); }
+function workLabel(work) {
+  const label = node("span", "work-id", work.id);
+  label.setAttribute("aria-label", "作品ID " + work.id);
+  return label;
+}
 let startOnOpen = null;
 function entry(work,featured){
   const link=node("a",featured?"featured":"card");
@@ -26,7 +31,7 @@ function entry(work,featured){
   line.append(node("span","running-time",clock(work.seconds)));
   if (featured) {
     const caption=node("div","featured-caption");
-    caption.append(node("span","hero-label","FEATURED WORK"),filmTitle(work,"h2"),line,
+    caption.append(node("span","hero-label","FEATURED WORK"),workLabel(work),filmTitle(work,"h2"),line,
       node("p","synopsis",work.description),node("span","cta",work.video?"▶　作品を再生":"作品をひらく　↗"));
     link.append(poster,caption);
     if(work.video) link.addEventListener("click",event=>{
@@ -37,7 +42,10 @@ function entry(work,featured){
     poster.loading="lazy";
     cover.append(poster,node("span","card-arrow","↗"));
     const text=node("div","card-text");
-    text.append(node("small","film-id",work.id+"　/　"+work.series),filmTitle(work,"h3"),line,node("p","synopsis",work.description));
+    const kicker=node("div","card-kicker");
+    kicker.append(workLabel(work),node("span","film-genre",work.series));
+    text.append(kicker,filmTitle(work,"h3"),line,node("p","synopsis",work.description),
+      node("p","completion-date",Chronology.label(work)));
     link.append(cover,text);
   }
   return link;
@@ -125,7 +133,10 @@ function route() {
   }
   document.title = Titles.text(work) + " — Works Library";
   byId("title").replaceChildren(...filmTitle(work,"span").childNodes);
-  byId("meta").textContent = [clock(work.seconds), work.version, work.series].join("　·　");
+  byId("work-code").textContent = work.id;
+  byId("work-code").setAttribute("aria-label", "作品ID " + work.id);
+  byId("meta").textContent = [clock(work.seconds), work.series].join("　·　");
+  byId("completion").textContent = Chronology.label(work);
   byId("description").textContent = work.description;
   const watch = byId("watch");
   watch.hidden = !work.video;

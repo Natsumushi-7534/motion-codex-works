@@ -28,8 +28,16 @@ button{background:transparent;border:1px solid var(--line)}
 .featured>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 48%}
 .featured:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#0b0c0de6 0%,#1010109c 33%,transparent 70%),linear-gradient(0deg,#0b0c0d88,transparent 58%)}
 .featured-caption{padding:clamp(24px,4.4vw,72px);max-width:min(730px,68%);min-width:0}
-.hero-label,.eyebrow,.film-id,.english-title{letter-spacing:.15em}
-.hero-label,.eyebrow,.film-id{font-size:11px;font-weight:600}
+.hero-label,.eyebrow,.english-title{letter-spacing:.15em}
+.hero-label,.eyebrow{font-size:11px;font-weight:600}
+.work-id{display:inline-flex;align-items:center;font:600 11px/1.25 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:.15em;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 42%,transparent);border-radius:3px;padding:5px 8px;white-space:nowrap}
+.featured .work-id{color:#ead5a7;border-color:#c9ad765c;background:#15151566;margin-left:14px}
+.card-kicker{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.film-genre{font-size:11px;color:var(--muted);letter-spacing:.08em}
+.completion-date,.chronology-note{color:var(--muted);font-size:11px;line-height:1.6}
+.completion-date{margin:12px 0 0;font-variant-numeric:tabular-nums}
+.chronology-note{margin:-7px 0 22px;max-width:52em}
+.notes>.work-id{margin-bottom:12px}
 .hero-label{display:inline-flex;align-items:center;gap:12px;color:#ecdbb7}
 .hero-label:before{content:"";width:24px;height:1px;background:currentColor}
 .film-title,.notes h1,.collection-heading h2{font-family:var(--serif);font-weight:400}
@@ -38,7 +46,7 @@ button{background:transparent;border:1px solid var(--line)}
 .english-title{font:500 12px/1.55 -apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;letter-spacing:.12em;margin-top:7px}
 .featured h2{font-size:clamp(36px,4.4vw,73px);margin:12px 0 14px;letter-spacing:-.045em}
 .film-facts{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.running-time,.film-id{color:var(--muted);font-size:12px}
+.running-time{color:var(--muted);font-size:12px}
 .featured .running-time{color:#eee7dc}
 .running-time{font-variant-numeric:tabular-nums;border-left:1px solid currentColor;padding-left:12px;line-height:1}
 .synopsis{font-size:14px;line-height:1.8;margin:10px 0 0;overflow-wrap:anywhere}
@@ -65,8 +73,7 @@ button{background:transparent;border:1px solid var(--line)}
 #count{color:var(--muted);font-size:13px}
 .filters{display:flex;align-items:center;flex-wrap:wrap;gap:10px 20px;padding:16px 0 20px}
 .filters label{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
-.filters input,.filters select{min-height:44px;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:6px 10px;color:var(--ink)}
-.filters input{width:clamp(125px,19vw,280px)}
+.filters select{min-height:44px;min-width:180px;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:6px 10px;color:var(--ink)}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:35px clamp(15px,2vw,30px)}
 .card{min-width:0;display:block;border-bottom:1px solid var(--line);padding-bottom:20px}
 .card-cover{aspect-ratio:1.96;position:relative;overflow:hidden;border-radius:4px;background:#151616}
@@ -111,8 +118,8 @@ footer small{margin-right:auto}
   .dot{min-width:44px}.feature-nav{margin-left:auto}
   .gallery{grid-template-columns:minmax(0,1fr);gap:22px}
   .filters{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
-  .filters label{display:grid;gap:2px}.filters .search{grid-column:1/-1}
-  .filters input,.filters select{width:100%;min-width:0;font-size:16px}
+  .filters label{display:grid;gap:2px}
+  .filters select{width:100%;min-width:0;font-size:16px}
 }
 @media(prefers-reduced-motion:reduce){.card-cover img{transition:none}}
 @media(max-width:420px){

@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Motion × Codexの映像作品を集めた、小さなオンライン上映室。"><title>Motion × Codex — Works Library</title><link rel="stylesheet" href="./style.css">
-<script defer src="./works.js"></script><script defer src="./titles.js"></script><script defer src="./gallery.js"></script><script defer src="./carousel.js"></script><script defer src="./appearance.js"></script>
+<script defer src="./works.js"></script><script defer src="./titles.js"></script><script defer src="./chronology.js"></script><script defer src="./gallery.js"></script><script defer src="./carousel.js"></script><script defer src="./appearance.js"></script>
 </head><body>
 <header class="masthead"><a class="wordmark" href="./">Motion <i>×</i> Codex</a><span class="brand-section">Works Library</span><button id="theme" type="button" aria-label="Classic表示に切り替える">Classic</button></header>
 <main>
@@ -16,13 +16,14 @@
 <button id="prev" type="button" aria-label="前の作品">←</button><span id="position"></span><button id="next" type="button" aria-label="次の作品">→</button></div></div>
 </section>
 <section id="collection"><div class="collection-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>作品一覧</h2></div><p id="count" aria-live="polite"></p></div>
-<div class="filters"><label class="search"><span>検索</span><input type="search" id="search" placeholder="作品名・作品ID" autocomplete="off"></label>
-<label>分類<select id="series"><option value="">すべての分類</option></select></label>
+<div class="filters"><label>ジャンル<select id="series"><option value="">すべてのジャンル</option></select></label>
+<label>並び順<select id="sort"><option value="completed-desc" selected>新しい順</option><option value="completed-asc">古い順</option></select></label>
 </div>
-<div class="gallery" id="gallery"></div><p id="no-results" hidden>該当する作品はありません。検索条件を変更してください。</p></section></div>
+<p class="chronology-note" id="chronology-note">完成採用日時（JST）順。同日で時刻不明の作品は便宜的な順です。</p>
+<div class="gallery" id="gallery"></div><p id="no-results" hidden>このジャンルの作品はありません。</p></section></div>
 <section id="screening" hidden><a href="#collection" class="back">← 作品一覧</a>
 <div class="stage" id="stage"></div><div class="notes"><p class="eyebrow">SCREENING ROOM</p>
-<h1 id="title" tabindex="-1"></h1><p id="description"></p><p id="meta"></p></div>
+<span class="work-id" id="work-code"></span><h1 id="title" tabindex="-1"></h1><p id="description"></p><p id="meta"></p><p class="completion-date" id="completion"></p></div>
 <div class="actions"><p id="status" role="status"></p><div class="watch-controls"><button id="expand" hidden>全画面で見る</button><a id="watch" target="_blank" rel="noopener noreferrer">YouTubeで見る ↗</a></div></div></section>
 <footer><span>Motion × Codex</span><small>Works Library</small></footer></main>
 <noscript>作品を表示するにはJavaScriptを有効にしてください。</noscript></body></html>

@@ -9,7 +9,11 @@ const works = [
     "thumbnail": "./images/aurelia.jpg",
     "featured": true,
     "japaneseTitle": "",
-    "englishTitle": "AURELIA SOUND"
+    "englishTitle": "AURELIA SOUND",
+    "completion": {
+      "day": "2026-10-16",
+      "at": "2026-10-16T22:45+09:00"
+    }
   },
   {
     "id": "MC005",
@@ -21,7 +25,11 @@ const works = [
     "thumbnail": "./images/mj.jpg",
     "featured": true,
     "japaneseTitle": "相棒MJの覚醒",
-    "englishTitle": "MJ AWAKENING"
+    "englishTitle": "MJ AWAKENING",
+    "completion": {
+      "day": "2026-10-11",
+      "at": null
+    }
   },
   {
     "id": "MC071",
@@ -33,7 +41,11 @@ const works = [
     "thumbnail": "./images/star.jpg",
     "featured": true,
     "japaneseTitle": "星を汲む鳥",
-    "englishTitle": "THE STAR DIPPER"
+    "englishTitle": "THE STAR DIPPER",
+    "completion": {
+      "day": "2026-11-02",
+      "at": null
+    }
   },
   {
     "id": "MC072",
@@ -45,7 +57,11 @@ const works = [
     "thumbnail": "./images/hour.jpg",
     "featured": true,
     "japaneseTitle": "時を駆ける兎",
-    "englishTitle": "THE HOUR THAT RAN"
+    "englishTitle": "THE HOUR THAT RAN",
+    "completion": {
+      "day": "2026-11-02",
+      "at": null
+    }
   },
   {
     "id": "MC073",
@@ -57,7 +73,11 @@ const works = [
     "thumbnail": "./images/glass.jpg",
     "featured": true,
     "japaneseTitle": "硝子の中庭",
-    "englishTitle": "THE GLASS COURTYARD"
+    "englishTitle": "THE GLASS COURTYARD",
+    "completion": {
+      "day": "2026-11-02",
+      "at": null
+    }
   },
   {
     "id": "MC036",
@@ -69,7 +89,11 @@ const works = [
     "seconds": 40.0,
     "video": "mWYedpSXS50",
     "thumbnail": "./images/MC036-C05.jpg",
-    "featured": true
+    "featured": true,
+    "completion": {
+      "day": "2026-10-23",
+      "at": "2026-10-23T07:46+09:00"
+    }
   }
 ];
 const initialFeaturedIds = works.filter(work => work.featured).map(work => work.id);
