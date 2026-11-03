@@ -44,13 +44,7 @@ function stars(work) {
   }
   return svg;
 }
-function filmTitle(work,tag) {
-  const title=node(tag,"film-title");
-  const [first,second]=work.title.split("｜");
-  title.append(node("span","main-title",first));
-  if(second) title.append(node("span","alternate-title",second));
-  return title;
-}
+function filmTitle(work,tag) { return Titles.render(work,tag); }
 let startOnOpen = null;
 function entry(work,featured){
   const link=node("a",featured?"featured":"card");
@@ -122,7 +116,7 @@ byId("expand").onclick = async () => {
 };
 function start(work) {
   const frame = node("iframe");
-  frame.title = work.title + " — YouTubeプレーヤー";
+  frame.title = Titles.text(work) + " — YouTubeプレーヤー";
   frame.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
   frame.allowFullscreen = true;
   frame.referrerPolicy = "strict-origin-when-cross-origin";
@@ -157,7 +151,7 @@ function route() {
     if (lastEntry?.isConnected) lastEntry.focus({preventScroll: true});
     return;
   }
-  document.title = work.title + " — Works Library";
+  document.title = Titles.text(work) + " — Works Library";
   byId("title").replaceChildren(...filmTitle(work,"span").childNodes);
   byId("detail-rating").replaceChildren(stars(work));
   byId("meta").textContent = [clock(work.seconds), work.version, work.series].join("　·　");
@@ -169,7 +163,7 @@ function route() {
   const play = node("button", "poster");
   play.type = "button";
   play.disabled = !work.video;
-  play.setAttribute("aria-label", work.video ? work.title + "を再生" : "YouTube再生不可・投稿状況未確認");
+  play.setAttribute("aria-label", work.video ? Titles.text(work) + "を再生" : "YouTube再生不可・投稿状況未確認");
   play.append(image(work), node("span", "play-label", work.video ? "▶　作品を再生" : "YouTube投稿状況　未確認"));
   if (work.video) play.onclick = () => start(work);
   byId("stage").append(play);

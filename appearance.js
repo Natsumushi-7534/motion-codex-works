@@ -19,7 +19,7 @@ function filterWorks(){
   let count = 0;
   works.forEach((w,i)=>{
     const matchScore = score==="unrated" ? w.rating==null : !score || (w.rating!=null && w.rating>=Number(score));
-    const match = matchScore && (!series || w.series===series) && normalize(w.title+" "+w.version).includes(query);
+    const match = matchScore && (!series || w.series===series) && normalize(Titles.search(w)).includes(query);
     cards[i].hidden=!match;
     if(match) count++;
   });

@@ -34,7 +34,7 @@ const carousel = (() => {
     dots.replaceChildren(...selected.map((work,i) => {
       const dot = node("button", "dot");
       dot.type = "button";
-      dot.setAttribute("aria-label", work.title + "を表示");
+      dot.setAttribute("aria-label", Titles.text(work) + "を表示");
       dot.onclick = () => show(i);
       return dot;
     }));
