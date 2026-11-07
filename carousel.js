@@ -30,7 +30,9 @@ const carousel = (() => {
   }
   function select(ids) {
     const previous = selected[index]?.id;
-    selected = works.filter(w => ids.includes(w.id)).sort((a,b) => b.id.localeCompare(a.id));
+    selected = typeof initialFeaturedVersions !== "undefined"
+      ? initialFeaturedVersions.map(version => works.find(w => w.version === version && w.featured)).filter(Boolean)
+      : works.filter(w => ids.includes(w.id)).sort((a,b) => b.id.localeCompare(a.id));
     dots.replaceChildren(...selected.map((work,i) => {
       const dot = node("button", "dot");
       dot.type = "button";

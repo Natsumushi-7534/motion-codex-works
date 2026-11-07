@@ -23,7 +23,7 @@ const works = [
     "seconds": 27.67,
     "video": "6F3ll2d8P6I",
     "thumbnail": "./images/mj.jpg",
-    "featured": true,
+    "featured": false,
     "japaneseTitle": "相棒MJの覚醒",
     "englishTitle": "MJ AWAKENING",
     "completion": {
@@ -55,7 +55,7 @@ const works = [
     "seconds": 72,
     "video": "5ugjJ9g48eM",
     "thumbnail": "./images/hour.jpg",
-    "featured": true,
+    "featured": false,
     "japaneseTitle": "時を駆ける兎",
     "englishTitle": "THE HOUR THAT RAN",
     "completion": {
@@ -71,7 +71,7 @@ const works = [
     "seconds": 72,
     "video": "UEbORGqeIhk",
     "thumbnail": "./images/glass.jpg",
-    "featured": true,
+    "featured": false,
     "japaneseTitle": "硝子の中庭",
     "englishTitle": "THE GLASS COURTYARD",
     "completion": {
@@ -89,7 +89,7 @@ const works = [
     "seconds": 40.0,
     "video": "mWYedpSXS50",
     "thumbnail": "./images/MC036-C05.jpg",
-    "featured": true,
+    "featured": false,
     "completion": {
       "day": "2026-10-23",
       "at": "2026-10-23T07:46+09:00"
@@ -112,4 +112,5 @@ const works = [
     }
   }
 ];
+const initialFeaturedVersions = ["MC071-C16", "MC049-C05", "MC011-C01"];
 const initialFeaturedIds = works.filter(work => work.featured).map(work => work.id);
