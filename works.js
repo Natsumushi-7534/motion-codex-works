@@ -104,7 +104,7 @@ const works = [
     "series": "映像作品",
     "seconds": 30.0,
     "video": "TK82t-tBAI0",
-    "thumbnail": "./images/MC049-C05.jpg",
+    "thumbnail": "./images/MC049-C05-141fa363752f47c0.jpg",
     "featured": true,
     "completion": {
       "day": "2026-10-31",
