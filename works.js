@@ -110,6 +110,22 @@ const works = [
       "day": "2026-10-31",
       "at": null
     }
+  },
+  {
+    "id": "MC077",
+    "version": "MC077-C05",
+    "japaneseTitle": "露の番人",
+    "englishTitle": "THE DEW KEEPER",
+    "description": "静かな池でハエを狙う蛙。頭にとまったハエは去り、空いた葉を見つめる蛙だけが残る。静と動、音と静寂、最後の5秒の余韻を描く。",
+    "series": "映像作品",
+    "seconds": 28.0,
+    "video": "onXO24Y9mlg",
+    "thumbnail": "./images/MC077-C05-43da3b698222d034.jpg",
+    "featured": false,
+    "completion": {
+      "day": "2026-11-04",
+      "at": null
+    }
   }
 ];
 const initialFeaturedVersions = ["MC071-C16", "MC049-C05", "MC011-C01"];
