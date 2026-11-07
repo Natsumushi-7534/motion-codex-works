@@ -128,5 +128,5 @@ const works = [
     }
   }
 ];
-const initialFeaturedVersions = ["MC071-C16", "MC049-C05", "MC011-C01"];
+const initialFeaturedVersions = ["MC011-C01", "MC049-C05", "MC071-C16"];
 const initialFeaturedIds = works.filter(work => work.featured).map(work => work.id);
