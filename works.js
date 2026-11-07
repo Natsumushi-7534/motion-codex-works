@@ -94,6 +94,22 @@ const works = [
       "day": "2026-10-23",
       "at": "2026-10-23T07:46+09:00"
     }
+  },
+  {
+    "id": "MC049",
+    "version": "MC049-C05",
+    "japaneseTitle": "",
+    "englishTitle": "A BREATH OF MATTER",
+    "description": "55層の陶質の造形が、卵形からS字へと呼吸するように開いていく。わずかに遅れて動く一枚一枚の層が、静かなかたちに生命の気配を生み出す。",
+    "series": "映像作品",
+    "seconds": 30.0,
+    "video": "TK82t-tBAI0",
+    "thumbnail": "./images/MC049-C05.jpg",
+    "featured": true,
+    "completion": {
+      "day": "2026-10-31",
+      "at": null
+    }
   }
 ];
 const initialFeaturedIds = works.filter(work => work.featured).map(work => work.id);
