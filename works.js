@@ -142,6 +142,22 @@ const works = [
       "day": "2026-11-01",
       "at": null
     }
+  },
+  {
+    "id": "MC069",
+    "version": "MC069-C14r04",
+    "japaneseTitle": "灯の泊地",
+    "englishTitle": "VESPER IN PORT",
+    "description": "客船VESPERが夕刻の港へ静かに入り、灯台と街の灯りに迎えられる。",
+    "series": "映像作品",
+    "seconds": 72.0,
+    "video": "Oqphj7laS54",
+    "thumbnail": "./images/MC069-C14r04.jpg",
+    "featured": false,
+    "completion": {
+      "day": "2026-11-01",
+      "at": null
+    }
   }
 ];
 const initialFeaturedVersions = ["MC011-C01", "MC049-C05", "MC071-C16"];
