@@ -126,6 +126,22 @@ const works = [
       "day": "2026-11-04",
       "at": null
     }
+  },
+  {
+    "id": "MC066",
+    "version": "MC066-C11",
+    "japaneseTitle": "夜をひと巻き",
+    "englishTitle": "ONE TURN OF NIGHT",
+    "description": "円筒の陰刻が朱蝋の浮き彫りに残り、街の模様が夜蛾の翅になる。",
+    "series": "映像作品",
+    "seconds": 90.0,
+    "video": "4_qXkEUsorU",
+    "thumbnail": "./images/MC066-C11-f720a062f8d5c973.jpg",
+    "featured": false,
+    "completion": {
+      "day": "2026-11-01",
+      "at": null
+    }
   }
 ];
 const initialFeaturedVersions = ["MC011-C01", "MC049-C05", "MC071-C16"];
